@@ -1,64 +1,374 @@
 import React from "react";
-import { Typography, AppBar, Box, Button, Card, CardActions, CardContent, CardMedia, CssBaseline, Grid, Toolbar, Container } from "@mui/material";
+import { styled, Typography, AppBar, Box, Button, Card, CardActions, CardContent, CardMedia, CssBaseline, Grid, Toolbar, Container } from "@mui/material";
 import { Menu } from "@mui/icons-material";
-import useStyles from "./styles";
-import { Nunito } from '@next/font/google';
 
-const nunito = Nunito({
-  weight: "600",
-  subsets: ["latin"]
-});
+const LeVesuvio = styled(Box)(({ theme }) => ({
+  position: "absolute",
+  top: 64,
+  fontFamily: "ITC Berkeley Oldstyle Std",
+  fontWeight: 700,
+  color: "black",
+  fontSize: 34,
+  [theme.breakpoints.down("sm")]: {
+    fontSize: 20,
+    top: 48,
+  }
+}));
+
+const FloatingLogo = styled(Box)(({ theme }) => ({
+  position: "absolute",
+  top: "100px",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  msTransform: "translate(-50%, -50%)",
+  height: 214,
+  width: 214,
+  [theme.breakpoints.down("sm")]: {
+    width: 176,
+    height: 176
+  }
+}));
+
+const FloatingLogo2 = styled(Box)(({ theme }) => ({
+  display: "block",
+  marginLeft: "auto",
+  marginRight: "auto",
+  width: "80%",
+}));
+
+const NftBox = styled(Box)(({ theme }) => ({
+  position: "absolute",
+  left: "148px",
+  top: "78px",
+  width:"48px",
+  minHeight:"4px",
+  [theme.breakpoints.down("sm")]: {
+    left: "88px",
+    top: "52px",
+    width: "32px",
+  },
+}));
+
+const Hamburger = styled(Box)(({ theme }) => ({
+  position:"absolute",
+  top:"88px",
+  width:"96px",
+  transform: "scale(2)",
+  color: "#9E946E",
+  [theme.breakpoints.down("sm")]: {
+    top: "48px"
+  }
+}));
+
+const Header = styled(Box)(({ theme }) => ({
+  backgroundSize: "cover",
+  backgroundPosition: "center",
+  margin: "auto",
+  backgroundImage: "url('assets/img1.png')",
+  backgroundSize: "100%",
+  backgroundRepeat: "no-repeat",
+  width:"100%",
+  minHeight:"100px",
+  marginTop: "75px",
+  backgroundColor: "#FFF",
+  overflow: "hidden"
+}));
+
+const Header_2 = styled(Box)(({ theme }) => ({
+  backgroundImage: "url('assets/img2.png')",
+  backgroundSize: "100% 100%",
+  backgroundRepeat: "no-repeat",
+  width:"100%",
+  minHeight:"100px",
+  marginTop: "75px",
+  backgroundColor: "#FFF",
+  height: "100vh",
+  overflow: "hidden",
+}));
+
+const But2 = styled(Button)(({ theme }) => ({
+  color: "#A09369",
+  width: "240px",
+  height: "72px",
+  [theme.breakpoints.down("sm")]: {
+    width: "50vh",
+  }
+}));
+
+const But3 = styled(Button)(({ theme }) => ({
+  color: "#A09369",
+  width: "240px",
+  height: "60px"
+}));
+
+const But4 = styled(Button)(({ theme }) => ({
+  color: "#FFF",
+  height: "72px",
+  width: "240px",
+  [theme.breakpoints.down("sm")]: {
+    width: "50vh",
+  }
+}));
+
+const Text1 = styled(Typography)(({ theme }) => ({
+  marginTop: "16px",
+  color: "#FFF",
+  [theme.breakpoints.down("sm")]: {
+    width: "80%",
+  },
+}));
+
+const Section1 = styled(Box)(({ theme }) => ({
+  minHeight: "200px",
+  width: "100%",
+  overflow: "hidden",
+}));
+
+const Image2 = styled(Box)(({ theme }) => ({
+  height: "100%",
+  width: "100%",
+  backgroundImage: "url('assets/bg1.png')",
+  backgroundSize: "100% 100%",
+  backgroundPosition: "center",
+  backgroundRepeat: "no-repeat",
+  margin: "auto",
+}));
+
+const Section1_2 = styled(Box)(({ theme }) => ({
+  minHeight: "200px",
+  width: "100%",
+  overflow: "hidden",
+}));
+
+const Section3 = styled(Box)(({ theme }) => ({
+  minHeight: "200px",
+  width: "100%",
+  backgroundImage: "url('assets/bg1_2.png')",
+  backgroundSize: "100% 100%",
+  backgroundPosition: "center",
+  backgroundRepeat: "no-repeat",
+  margin: "auto",
+  marginTop: "32px",
+}));
+
+const Section3_2 = styled(Box)(({ theme }) => ({
+  marginLeft: "auto",
+  marginRight: "auto",
+  width: "80%",
+}));
+
+const Section4_2 = styled(Box)(({ theme }) => ({
+  minHeight: "200px",
+  width: "100%",
+  backgroundImage: "url('assets/bg2.png')",
+  backgroundSize: "100% 100%",
+  backgroundPosition: "center",
+  backgroundRepeat: "no-repeat",
+  margin: "auto",
+  marginTop: "32px",
+}));
+
+const Section5 = styled(Box)(({ theme }) => ({
+  marginLeft: "auto",
+  marginRight: "auto",
+  width: "100%",
+  align: "center"
+}));
+
+const Avantages1 = styled(Box)(({ theme }) => ({
+  backgroundImage: "url('assets/bg7.png')",
+  backgroundPosition: "center",
+  backgroundRepeat: "no-repeat",
+  backgroundSize: "100% 100%",
+  minHeight: "172px",
+  width: "110%",
+  margin: "auto"
+}));
+
+const Avantages2 = styled(Box)(({ theme }) => ({
+  backgroundImage: "url('assets/bg8.png')",
+  backgroundPosition: "center",
+  backgroundRepeat: "no-repeat",
+  backgroundSize: "100% 100%",
+  minHeight: "172px",
+  marginLeft: "32px",
+  width: "100%"
+}));
+
+const Avantages3 = styled(Box)(({ theme }) => ({
+  backgroundImage: "url('assets/bg9.png')",
+  backgroundPosition: "center",
+  backgroundRepeat: "no-repeat",
+  backgroundSize: "100% 100%",
+  minHeight: "172px",
+  width: "110%",
+  margin: "auto"
+}));
+
+const Avantages4 = styled(Box)(({ theme }) => ({
+  backgroundImage: "url('assets/bg10.png')",
+  backgroundPosition: "center",
+  backgroundRepeat: "no-repeat",
+  backgroundSize: "100% 100%",
+  minHeight: "172px",
+  margin: "auto",
+  marginLeft: "32px",
+  width: "100%"
+}));
+
+const Avantages1_2 = styled(Box)(({ theme }) => ({
+  minHeight: "100px",
+  width: "100%",
+  backgroundSize: "100% 100%",
+  backgroundImage: "url('assets/bg3.png')",
+  backgroundPosition: "center",
+  backgroundRepeat: "no-repeat",
+  margin: "auto",
+  marginTop: "176px",  
+  position: "relative"
+}));
+
+const Avantages2_2 = styled(Box)(({ theme }) => ({
+    minHeight: "100px",
+    width: "100%",
+    backgroundSize: "100% 100%",
+    backgroundImage: "url('assets/bg4.png')",
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
+    margin: "auto",
+    marginTop: "176px",  
+    position: "relative"
+}));
+
+const Avantages3_2 = styled(Box)(({ theme }) => ({
+  minHeight: "100px",
+  width: "100%",
+  backgroundSize: "100% 100%",
+  backgroundImage: "url('assets/bg5.png')",
+  backgroundPosition: "center",
+  backgroundRepeat: "no-repeat",
+  margin: "auto",
+  marginTop: "176px",  
+  position: "relative"
+}));
+
+const Avantages4_2 = styled(Box)(({ theme }) => ({
+  minHeight: "100px",
+  width: "100%",
+  backgroundSize: "100% 100%",
+  backgroundImage: "url('assets/bg6.png')",
+  backgroundPosition: "center",
+  backgroundRepeat: "no-repeat",
+  margin: "auto",
+  marginTop: "176px",  
+  position: "relative"
+}));
+
+const AvantagesImg = styled(Box)(({ theme }) => ({
+  height: "100%",
+  minWidth: "150px",
+  position: "absolute",
+}));
+
+const AvantagesImg_2 = styled(Box)(({ theme }) => ({
+  display: "block",
+  marginLeft: "auto",
+  marginRight: "auto",
+  width: "70%",
+  align: "center",
+}));
+
+const AvantagesImgBox_2 = styled(Box)(({ theme }) => ({
+  width: "100%",
+  position: "absolute",
+  top: "-128px",
+}));
+
+const Img3 = styled(Box)(({ theme }) => ({
+  display: "block",
+  marginLeft: "auto",
+  marginRight: "auto",
+  width: "50%",
+  marginBottom: "48px",
+}));
+
+const Sun = styled(Box)(({ theme }) => ({
+  display: "block",
+  marginleft: "auto",
+  marginright: "auto",
+  width: "100%",
+}));
+
+const Sun2 = styled(Box)(({ theme }) => ({
+  display: "block",
+  marginleft: "auto",
+  marginright: "auto",
+  width: "100%",
+  marginTop: "-120px",
+}));
+
+const Footer = styled(Box)(({ theme }) => ({
+  width: "100%",
+  height: "256px",
+  backgroundColor: "#282828"
+}));
+
+const AvantagesHeader_2 = styled(Box)(({ theme }) => ({
+  marginTop: "16px",
+  color: "#FFF",
+  [theme.breakpoints.down("sm")]: {
+    width: "80%",
+  }
+}));
 
 const Home = () => {
-  const classes = useStyles();
-  
   return (
       <>
       <CssBaseline />
-      <AppBar className={classes.appbar} position="relative" elevation={0}>
-        <Toolbar>
+        <appbar position="relative" elevation={0} height="200px">
+        <Toolbar position="relative">
           <Box sx={{ flexGrow: 1 }}>
-            <Typography className={classes.leVesuvio} position="absolute" top="64px" fontFamily="ITC Berkeley Oldstyle Std" fontWeight="700" variant="h4" color="black">
+            <LeVesuvio>
               le Vesuvio
-            </Typography>
-            <Box className={classes.nftBox} position="absolute" left="148px" top="78px">
-              <img className={classes.nft} width="48px" src="assets/nft.png" alt=""/>
-            </Box>
+            </LeVesuvio>
+            <NftBox>
+              <img width="100%" height="100%" src="assets/nft.png" alt=""/>
+            </NftBox>
           </Box>
           <Box color="black">
-            <Typography className={classes.hamburger} position="absolute" top="88px" width="96px">
+            <Hamburger>
               <Menu />
-            </Typography>
+            </Hamburger>
           </Box>
         </Toolbar>
-      </AppBar>
-      <main className={classes.main}>
-        <Box position="relative">
-          <img className={classes.floatingLogo} src="assets/logo2.png" alt=""/>
-        </Box>
+      </appbar>
 
+      <main>
         {/* Header Desktop*/}
-        <Box className={classes.header} sx={{ display: { xs: 'none', sm: 'block' } }}>
+        <Header sx={{ display: { xs: 'none', sm: 'block' } }}>
           <Grid paddingTop={32} paddingBottom={32} height="100%" container spacing={0} direction="column" alignItems="center" justifyContent="center">
             <Grid item>
-              <Button className={classes.but2} variant="contained">
+              <But2 variant="contained">
                 <Typography fontWeight="700">
                   CONNEXION
                 </Typography>
-              </Button> 
+              </But2> 
             </Grid>
             <Grid item>
-              <Typography className={classes.text1} fontWeight="500" variant="h6">
+              <Text1 fontWeight="500" variant="h6">
                 Vous pouvez vous connecter via votre Wallet ou par Email.
-              </Typography>
+              </Text1>
             </Grid>
           </Grid>
-        </Box>
+        </Header>
 
+      <FloatingLogo>
+        <img height="100%" width="100%" src="assets/logo2.png" alt=""/>
+      </FloatingLogo>
 
         {/*Section 1 Desktop*/}
-        <Box className={classes.section1} elevation="20"  sx={{ display: { xs: 'none', sm: 'block' } }}>
-          <Box className={classes.image2}>
+        <Section1 elevation="20"  sx={{ display: { xs: 'none', sm: 'block' } }} position="relative">
+          <Image2>
             <Grid container direction="column" alignItems="center" justifyContent="center" color="#A09369">
               <Grid item marginTop={4}>
                 <Typography variant="h3" fontFamily="Heaters" fontWeight="400">
@@ -81,23 +391,25 @@ const Home = () => {
                 </Box>
               </Grid>
               <Grid item marginTop={4} marginBottom={4}>
-                <Button className={classes.but3} variant="contained">
+                <But3 variant="contained">
                   <Typography fontWeight="700" variant="h6">
                     MINT
                   </Typography>
-                </Button> 
+                </But3> 
               </Grid>
             </Grid>
-          </Box>
-        </Box>
+          </Image2>
+        </Section1>
         
         {/*Section 2 Desktop*/}
-        <Box className={classes.section2} elevation="20"  sx={{ display: { xs: 'none', sm: 'block' } }}>
-          <img className={classes.sun2} src="assets/sun2.png" alt=""/>
+        <Box elevation="20" sx={{ display: { xs: 'none', sm: 'block' } }}>
+          <Sun2>
+            <img height="100%" width="100%" src="assets/sun2.png" alt=""/>
+          </Sun2>
         </Box>
 
         {/*Section 3 and 4 Desktop*/}
-        <Box className={classes.section3} elevation="20"  sx={{ display: { xs: 'none', sm: 'block' } }}>
+        <Section3 elevation="20"  sx={{ display: { xs: 'none', sm: 'block' } }}>
           <Grid container direction="row" color="#A09369">
             <Grid item xs={5} marginLeft={4} marginTop={8} marginBottom={4}>
               <img width="50%" src="assets/img3.png"/>
@@ -127,14 +439,14 @@ const Home = () => {
               </Box>
             </Grid>
           </Grid>
-        </Box>
+        </Section3>
  
         {/* Section 5 Desktop */}
-        <Box className={classes.section5} sx={{ display: { xs: 'none', sm: 'block' } }}>
+        <Section5 sx={{ display: { xs: 'none', sm: 'block' } }}>
           <Typography align="center" marginTop="64px" fontFamily="ITC Berkeley Oldstyle Std" fontWeight="700" variant="h3" color="#9E946E">
             AVANTAGES
           </Typography>
-        </Box>
+        </Section5>
        
         {/*Section 6 Desktop*/}
         <Box container alignItems="center" sx={{ display: { xs: 'none', sm: 'block' } }} align="center">
@@ -142,7 +454,7 @@ const Home = () => {
             <Grid item xs={7} margin="auto">
               <Grid container position="relative" direction="row" color="#A09369">
                 <Grid item xs={9}>
-                  <Box className={classes.avantages1}>
+                  <Avantages1>
                     <Grid container direction="column" alignItems="center" justifyContent="center" color="#A09369">
                       <Grid item marginTop={4}>
                         <Typography variant="h4" color="#FFF" fontFamily="ITC Berkeley Oldstyle Std" fontWeight="500">
@@ -155,19 +467,21 @@ const Home = () => {
                         </Typography>
                       </Grid>
                     </Grid>
-                  </Box>
+                  </Avantages1>
                 </Grid>
-                <Grid item xs={0}>
-                  <img className={classes.avantagesImg} src="assets/avantages1.png" alt=""/>
+                <Grid item xs={3}>
+                  <AvantagesImg>
+                    <img width="100%" height="100%" src="assets/avantages1.png" alt=""/>  
+                  </AvantagesImg>
                 </Grid>
               </Grid>
             </Grid>   
             <Grid item xs={2} margin="auto">
-              <Button className={classes.but3} variant="contained">
+              <But3 variant="contained">
                 <Typography fontWeight="700" variant="h6">
                   DETAILS
                 </Typography>
-              </Button> 
+              </But3> 
             </Grid>   
           </Grid>
         </Box>
@@ -176,16 +490,16 @@ const Home = () => {
         <Box elevation="20"  sx={{ display: { xs: 'none', sm: 'block' } }} align="center">
           <Grid container marginTop={4} direction="row" color="#A09369">
             <Grid item xs={3} margin="auto">
-              <Button className={classes.but3} variant="contained">
+              <But3 variant="contained">
                 <Typography fontWeight="700" variant="h6">
                   DETAILS
                 </Typography>
-              </Button> 
+              </But3> 
             </Grid>   
-            <Grid item xs={9}>
+            <Grid item xs={7}>
               <Grid container position="relative" direction="row" color="#A09369">
                 <Grid item xs={8}>
-                  <Box className={classes.avantages2}>
+                  <Avantages2>
                     <Grid container direction="column" alignItems="center" justifyContent="center" color="#A09369">
                       <Grid item marginTop={4}>
                         <Typography variant="h4" color="#FFF" fontFamily="ITC Berkeley Oldstyle Std" fontWeight="500">
@@ -198,13 +512,17 @@ const Home = () => {
                         </Typography>
                       </Grid>
                     </Grid>
-                  </Box>
+                  </Avantages2>
                 </Grid>
                 <Grid item xs={0}>
-                  <img className={classes.avantagesImg} src="assets/avantages2.png" alt=""/>
+                  <AvantagesImg>
+                    <img width="100%" height="100%" src="assets/avantages2.png" alt=""/>  
+                  </AvantagesImg>
                 </Grid>
               </Grid>
             </Grid>   
+            <Grid item xs={1}>
+            </Grid>
           </Grid>
         </Box>
 
@@ -214,7 +532,7 @@ const Home = () => {
             <Grid item xs={7} margin="auto">
               <Grid container position="relative" direction="row" color="#A09369">
                 <Grid item xs={9}>
-                  <Box className={classes.avantages3}>
+                  <Avantages3>
                     <Grid container direction="column" alignItems="center" justifyContent="center" color="#A09369">
                       <Grid item marginTop={4}>
                         <Typography variant="h4" color="#FFF" fontFamily="ITC Berkeley Oldstyle Std" fontWeight="500">
@@ -227,19 +545,21 @@ const Home = () => {
                         </Typography>
                       </Grid>
                     </Grid>
-                  </Box>
+                  </Avantages3>
                 </Grid>
                 <Grid item xs={0}>
-                  <img className={classes.avantagesImg} src="assets/avantages3.png" alt=""/>
+                  <AvantagesImg>
+                    <img width="100%" height="100%" src="assets/avantages3.png" alt=""/>  
+                  </AvantagesImg>
                 </Grid>
               </Grid>
             </Grid>   
             <Grid item xs={2} margin="auto">
-              <Button className={classes.but3} variant="contained">
+              <But3 variant="contained">
                 <Typography fontWeight="700" variant="h6">
                   DETAILS
                 </Typography>
-              </Button> 
+              </But3> 
             </Grid>   
           </Grid>
         </Box>
@@ -248,16 +568,16 @@ const Home = () => {
         <Box elevation="20"  sx={{ display: { xs: 'none', sm: 'block' } }} align="center">
           <Grid container marginTop={4} direction="row" color="#A09369">
             <Grid item xs={3} margin="auto">
-              <Button className={classes.but3} variant="contained">
+              <But3 variant="contained">
                 <Typography fontWeight="700" variant="h6">
                   DETAILS
                 </Typography>
-              </Button> 
+              </But3> 
             </Grid>   
-            <Grid item xs={9}>
+            <Grid item xs={7}>
               <Grid container position="relative" direction="row" color="#A09369">
                 <Grid item xs={8}>
-                  <Box className={classes.avantages4}>
+                  <Avantages4>
                     <Grid container direction="column" alignItems="center" justifyContent="center" color="#A09369">
                       <Grid item marginTop={4}>
                         <Typography variant="h4" color="#FFF" fontFamily="ITC Berkeley Oldstyle Std" fontWeight="500">
@@ -270,37 +590,41 @@ const Home = () => {
                         </Typography>
                       </Grid>
                     </Grid>
-                  </Box>
+                  </Avantages4>
                 </Grid>
                 <Grid item xs={0}>
-                  <img className={classes.avantagesImg} src="assets/avantages4.png" alt=""/>
+                  <AvantagesImg>
+                    <img width="100%" height="100%" src="assets/avantages4.png" alt=""/>  
+                  </AvantagesImg>
                 </Grid>
               </Grid>
             </Grid>   
+            <Grid item xs={1}>
+            </Grid>
           </Grid>
         </Box>
 
         {/* Header Mobile*/}
-        <Box className={classes.header_2} sx={{ display: { xs: 'block', sm: 'none' } }}>
+        <Header_2 sx={{ display: { xs: 'block', sm: 'none' } }}>
           <Grid height="100%" container spacing={0} direction="column" alignItems="center" justifyContent="center">
             <Grid item>
-              <Button className={classes.but2} variant="contained">
+              <But2 variant="contained">
                 <Typography fontWeight="700" variant="h6">
                   CONNEXION
                 </Typography>
-              </Button> 
+              </But2> 
             </Grid>
             <Grid item>
-              <Typography className={classes.text1} fontWeight="500" width="100%" align="center" variant="h6">
+              <Text1 fontWeight="500" width="100%" align="center" variant="h6">
                 Vous pouvez vous connecter via votre Wallet ou par Email.
-              </Typography>
+              </Text1>
             </Grid>
           </Grid>
-        </Box>
+        </Header_2>
        
         {/*Section 1 Mobile*/}
-        <Box className={classes.section1_2} elevation="20"  sx={{ display: { xs: 'block', sm: 'none' } }}>
-          <Box className={classes.image2}>
+        <Section1_2 elevation="20"  sx={{ display: { xs: 'block', sm: 'none' } }}>
+          <Image2>
             <Grid container direction="column" alignItems="center" justifyContent="center" color="#A09369">
               <Grid item marginTop={4}>
                 <Typography variant="h3" fontFamily="Heaters" fontWeight="400">
@@ -323,24 +647,28 @@ const Home = () => {
                 </Box>
               </Grid>
               <Grid item marginTop={4} marginBottom={4}>
-                <Button className={classes.but3} variant="contained">
+                <But3 variant="contained">
                   <Typography fontWeight="700" variant="h6">
                     ACCEDER AU MINT
                   </Typography>
-                </Button> 
+                </But3> 
               </Grid>
             </Grid>
-          </Box>
-        </Box>
+          </Image2>
+        </Section1_2>
         
         {/* Section 2 Mobile */}
-        <Box className={classes.section2_2} sx={{ display: { xs: 'block', sm: 'none' } }}>
-          <img className={classes.sun} src="assets/sun.png" alt=""/>
+        <Box sx={{ display: { xs: 'block', sm: 'none' } }}>
+          <Sun>
+            <img width="100%" height="100%" src="assets/sun.png" alt=""/>
+          </Sun>
         </Box>
         
         {/* Section 3 Mobile */}
-        <Box className={classes.section3_2} sx={{ display: { xs: 'block', sm: 'none' } }}>
-          <img className={classes.img3} src="assets/img3.png" alt=""/>
+        <Section3_2 sx={{ display: { xs: 'block', sm: 'none' } }}>
+          <Img3>
+            <img width="100%" height="100%" src="assets/img3.png" alt=""/>
+          </Img3>
           <Typography fontSize="large" fontWeight="700">
             Plus qu’un restaurant, le Vesuvio est un lieu incontournable situé sur la célèbre Croisette à Cannes caractérisé par deux salles liant festivité et convivialité. 
           </Typography>
@@ -348,10 +676,10 @@ const Home = () => {
           <Typography fontSize="large" fontWeight="700">
             Le Vesuvio propose une ambiance traditionnelle et convivial, tandis que le café vous permettra de prolonger vos soirées dans une ambiance lounge et festive. Concept intemporel il réunit depuis 1969, toutes générations venues des 4 coins du monde.
           </Typography>
-        </Box>
+        </Section3_2>
 
         {/* Section 4 Mobile */}
-        <Box className={classes.section4_2} sx={{ display: { xs: 'block', sm: 'none' } }}>
+        <Section4_2 sx={{ display: { xs: 'block', sm: 'none' } }}>
           <Grid container direction="column" alignItems="center" justifyContent="center" color="#A09369">
             <Grid item marginTop={4}>
               <Typography marginTop="64px" fontFamily="ITC Berkeley Oldstyle Std" fontWeight="700" variant="h3" color="#9E946E">
@@ -359,7 +687,9 @@ const Home = () => {
               </Typography>
             </Grid>
             <Grid item position="relative" marginTop={4}>
-              <img className={classes.floatingLogo2} src="assets/logo2.png" alt=""/>
+              <FloatingLogo2>
+                <img width="100%" height="100%" src="assets/logo2.png" alt=""/>
+              </FloatingLogo2>
             </Grid>
             <Grid item marginBottom={4}>
               <Box width="80%" align="center" margin="auto" color="#FFF">
@@ -373,20 +703,22 @@ const Home = () => {
               </Box>
             </Grid>
           </Grid>
-        </Box>
+        </Section4_2>
         
         {/* Section 5 Mobile */}
-        <Box className={classes.section5} sx={{ display: { xs: 'block', sm: 'none' } }}>
+        <Section5 sx={{ display: { xs: 'block', sm: 'none' } }}>
           <Typography align="center" marginTop="64px" fontFamily="ITC Berkeley Oldstyle Std" fontWeight="700" variant="h3" color="#9E946E">
             AVANTAGES
           </Typography>
-        </Box>
+        </Section5>
 
         {/* Section 6 Mobile */}
-        <Box className={classes.avantages1_2} sx={{ display: { xs: 'block', sm: 'none' } }}>
-          <Box className={classes.avantagesBox_2}>
-            <img className={classes.avantagesImg_2} src="assets/avantages1.png" alt=""/>  
-          </Box>
+        <Avantages1_2 sx={{ display: { xs: 'block', sm: 'none' } }}>
+          <AvantagesImgBox_2>
+            <AvantagesImg_2>
+              <img width="100%" height="100%" src="assets/avantages1.png" alt=""/>  
+            </AvantagesImg_2>
+          </AvantagesImgBox_2>
           <Grid container direction="column" alignItems="center" justifyContent="center" color="#A09369">
             <Grid item marginTop={48}>
               <Typography variant="h2" color="#FFF" fontFamily="ITC Berkeley Oldstyle Std" fontWeight="700">
@@ -399,20 +731,22 @@ const Home = () => {
               </Typography>
             </Grid>         
             <Grid item marginTop={16} marginBottom={16}>
-              <Button className={classes.but2} variant="contained">
+              <But2 variant="contained">
                 <Typography fontWeight="700" variant="h6" fontSize="24px">
                   PLUS DE DETAILS
                 </Typography>
-              </Button> 
+              </But2> 
             </Grid>
           </Grid>
-        </Box>
+        </Avantages1_2>
 
         {/* Section 7 Mobile */}
-        <Box className={classes.avantages2_2} sx={{ display: { xs: 'block', sm: 'none' } }}>
-          <Box className={classes.avantagesBox_2}>
-            <img className={classes.avantagesImg_2} src="assets/avantages2.png" alt=""/>  
-          </Box>
+        <Avantages2_2 sx={{ display: { xs: 'block', sm: 'none' } }}>
+          <AvantagesImgBox_2>
+            <AvantagesImg_2>
+              <img width="100%" height="100%" src="assets/avantages2.png" alt=""/>  
+            </AvantagesImg_2>
+          </AvantagesImgBox_2>
           <Grid container direction="column" alignItems="center" justifyContent="center" color="#A09369">
             <Grid item marginTop={48}>
               <Typography variant="h2" color="#FFF" fontFamily="ITC Berkeley Oldstyle Std" fontWeight="700">
@@ -425,20 +759,22 @@ const Home = () => {
               </Typography>
             </Grid>         
             <Grid item marginTop={16} marginBottom={16}>
-              <Button className={classes.but2} variant="contained">
+              <But2 variant="contained">
                 <Typography fontWeight="700" variant="h6" fontSize="24px">
                   PLUS DE DETAILS
                 </Typography>
-              </Button> 
+              </But2> 
             </Grid>
           </Grid>
-        </Box>
+        </Avantages2_2>
 
         {/* Section 8 Mobile */}
-        <Box className={classes.avantages3_2} sx={{ display: { xs: 'block', sm: 'none' } }}>
-          <Box className={classes.avantagesBox_2}>
-            <img className={classes.avantagesImg_2} src="assets/avantages3.png" alt=""/>  
-          </Box>
+        <Avantages3_2 sx={{ display: { xs: 'block', sm: 'none' } }}>
+          <AvantagesImgBox_2>
+            <AvantagesImg_2>
+              <img width="100%" height="100%" src="assets/avantages3.png" alt=""/>  
+            </AvantagesImg_2>
+          </AvantagesImgBox_2>
           <Grid container direction="column" alignItems="center" justifyContent="center" color="#A09369">
             <Grid item marginTop={48}>
               <Typography variant="h2" color="#FFF" fontFamily="ITC Berkeley Oldstyle Std" fontWeight="700">
@@ -451,20 +787,22 @@ const Home = () => {
               </Typography>
             </Grid>         
             <Grid item marginTop={16} marginBottom={16}>
-              <Button className={classes.but2} variant="contained">
+              <But2 variant="contained">
                 <Typography fontWeight="700" variant="h6" fontSize="24px">
                   PLUS DE DETAILS
                 </Typography>
-              </Button> 
+              </But2> 
             </Grid>
           </Grid>
-        </Box>
+        </Avantages3_2>
 
         {/* Section 9 Mobile */}
-        <Box className={classes.avantages4_2} sx={{ display: { xs: 'block', sm: 'none' } }}>
-          <Box className={classes.avantagesBox_2}>
-            <img className={classes.avantagesImg_2} src="assets/avantages4.png" alt=""/>  
-          </Box>
+        <Avantages4_2 sx={{ display: { xs: 'block', sm: 'none' } }}>
+          <AvantagesImgBox_2>
+            <AvantagesImg_2>
+              <img width="100%" height="100%" src="assets/avantages4.png" alt=""/>  
+            </AvantagesImg_2>
+          </AvantagesImgBox_2>
           <Grid container direction="column" alignItems="center" justifyContent="center" color="#A09369">
             <Grid item marginTop={48}>
               <Typography variant="h2" color="#FFF" fontFamily="ITC Berkeley Oldstyle Std" fontWeight="700">
@@ -477,14 +815,14 @@ const Home = () => {
               </Typography>
             </Grid>         
             <Grid item marginTop={16} marginBottom={16}>
-              <Button className={classes.but2} variant="contained">
+              <But2 variant="contained">
                 <Typography fontWeight="700" variant="h6" fontSize="24px">
                   PLUS DE DETAILS
                 </Typography>
-              </Button> 
+              </But2> 
             </Grid>
           </Grid>
-        </Box>
+        </Avantages4_2>
 
         {/* Section 10 Desktop and Mobile */}
         <Box>
@@ -495,30 +833,30 @@ const Home = () => {
               </Typography>
             </Grid>
             <Grid item marginTop={4}>
-              <Button className={classes.but2} variant="contained">
+              <But2 variant="contained">
                 <Typography fontWeight="700" variant="h6" fontSize="24px" sx={{ display: { xs: 'block', sm: 'none' } }}>
                   SE CONNECTER
                 </Typography>
                   <Typography fontWeight="700" variant="h6" fontSize="24px" sx={{ display: { xs: 'none', sm: 'block' } }}>
                   CONNEXION
                 </Typography>
-              </Button> 
+              </But2> 
             </Grid>
             <Grid item marginTop={4} marginBottom={4}>
-              <Button className={classes.but4} color="success" variant="contained">
+              <But4 color="success" variant="contained">
                 <Typography fontWeight="700" variant="h6" fontSize="24px" sx={{ display: { xs: 'block', sm: 'none' } }}>
                   ACCEDER AU MINT
                 </Typography>
                 <Typography fontWeight="700" variant="h6" fontSize="24px" sx={{ display: { xs: 'none', sm: 'block' } }}>
                   MINT
                 </Typography>
-              </Button> 
+              </But4> 
             </Grid>
           </Grid>
         </Box>
 
         {/* Footer Desktop */}
-        <footer className={classes.footer}>
+        <Footer>
           <Grid container direction="row" alignItems="center" justifyContent="center">
             <Grid item marginTop={4} xs={8} marginLeft={1} order={{ sm: 1, xs: 2}}>
               <Typography color="#FFF" fontWeight="500" fontSize="large">
@@ -552,7 +890,7 @@ const Home = () => {
               </Box>
             </Grid>
           </Grid>
-        </footer>
+        </Footer>
       </main>
     </>
   );

@@ -10,7 +10,14 @@ export default class MyDocument extends Document {
           <NextScript />
           <style jsx global>{`
             /* Other global styles such as 'html, body' etc... */
-
+#floatingLogo {
+  background-color: "#F00",
+  position: absolute,
+  top: -40px,
+  left: 50%,
+  height: 214px,
+}
+           
             #__next {
               height: 100%;
             }
