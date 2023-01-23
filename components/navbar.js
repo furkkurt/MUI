@@ -80,7 +80,19 @@ const MenuItem = styled(Typography)(({ theme }) => ({
   }
 }));
 
-
+const MenuBox = styled(Box)(({ theme }) => ({
+  backgroundColor:"#FFF",
+  position:"absolute",
+  top:"125px",
+  zIndex:"9999",
+  width:"322px",
+  right:"65px",
+  [theme.breakpoints.down("sm")]: {
+    width: "100%",
+    right: "0px",
+    top: "155px",
+  }
+}));
 function showMenu() {
   console.log(document.getElementById("menu"));
   document.getElementById("menu").setAttribute("display", "none");
@@ -106,8 +118,9 @@ function Navbar() {
         </Box>
       </Toolbar>
     </appbar>
+
     {/* Menu */}
-    {!show && <Box backgroundColor="#FFF" position="absolute" right="65px" top="125px" width="322px" zIndex="9999">
+      {!show && <MenuBox>
       <Paper elevation={2}>
         <Grid container direction="column" align="center">
           <Grid item marginTop={4}>
@@ -161,7 +174,7 @@ function Navbar() {
           </Grid>
         </Grid>
       </Paper>
-    </Box>}
+    </MenuBox>}
     </>
   )
 }

@@ -165,7 +165,7 @@ const Home = () => {
       </FloatingLogo>
 
         {/*Section 1 Desktop*/}
-        <Section1 elevation="20"  sx={{ display: { xs: 'none', sm: 'block' } }} position="relative">
+        <Section1 sx={{ display: { xs: 'none', sm: 'block' } }} position="relative">
           <Image2>
             <Grid container direction="column" alignItems="center" justifyContent="center" color="#A09369">
               <Grid item marginTop={4}>
@@ -200,7 +200,7 @@ const Home = () => {
         </Section1>
         
         {/*Section 2 Desktop*/}
-        <Box elevation="20" sx={{ display: { xs: 'none', sm: 'block' } }}>
+        <Box zIndex="9998" sx={{ display: { xs: 'none', sm: 'block' } }}>
           <Sun2>
             <img height="100%" width="100%" src="assets/sun2.png" alt=""/>
           </Sun2>
