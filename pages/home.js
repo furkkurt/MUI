@@ -1,19 +1,11 @@
 import React from "react";
 import { styled, Typography, AppBar, Box, Button, Card, CardActions, CardContent, CardMedia, CssBaseline, Grid, Toolbar, Container } from "@mui/material";
 import { Menu } from "@mui/icons-material";
-
-const LeVesuvio = styled(Box)(({ theme }) => ({
-  position: "absolute",
-  top: 64,
-  fontFamily: "ITC Berkeley Oldstyle Std",
-  fontWeight: 700,
-  color: "black",
-  fontSize: 34,
-  [theme.breakpoints.down("sm")]: {
-    fontSize: 20,
-    top: 48,
-  }
-}));
+import Navbar from "../components/navbar.js";
+import Avantages from "../components/avantages.js";
+import AvantagesMobile from "../components/avantagesMobile.js";
+import Header from "../components/header.js";
+import Footer from "../components/footer.js";
 
 const FloatingLogo = styled(Box)(({ theme }) => ({
   position: "absolute",
@@ -34,44 +26,6 @@ const FloatingLogo2 = styled(Box)(({ theme }) => ({
   marginLeft: "auto",
   marginRight: "auto",
   width: "80%",
-}));
-
-const NftBox = styled(Box)(({ theme }) => ({
-  position: "absolute",
-  left: "148px",
-  top: "78px",
-  width:"48px",
-  minHeight:"4px",
-  [theme.breakpoints.down("sm")]: {
-    left: "88px",
-    top: "52px",
-    width: "32px",
-  },
-}));
-
-const Hamburger = styled(Box)(({ theme }) => ({
-  position:"absolute",
-  top:"88px",
-  width:"96px",
-  transform: "scale(2)",
-  color: "#9E946E",
-  [theme.breakpoints.down("sm")]: {
-    top: "48px"
-  }
-}));
-
-const Header = styled(Box)(({ theme }) => ({
-  backgroundSize: "cover",
-  backgroundPosition: "center",
-  margin: "auto",
-  backgroundImage: "url('assets/img1.png')",
-  backgroundSize: "100%",
-  backgroundRepeat: "no-repeat",
-  width:"100%",
-  minHeight:"100px",
-  marginTop: "75px",
-  backgroundColor: "#FFF",
-  overflow: "hidden"
 }));
 
 const Header_2 = styled(Box)(({ theme }) => ({
@@ -175,115 +129,6 @@ const Section5 = styled(Box)(({ theme }) => ({
   align: "center"
 }));
 
-const Avantages1 = styled(Box)(({ theme }) => ({
-  backgroundImage: "url('assets/bg7.png')",
-  backgroundPosition: "center",
-  backgroundRepeat: "no-repeat",
-  backgroundSize: "100% 100%",
-  minHeight: "172px",
-  width: "110%",
-  margin: "auto"
-}));
-
-const Avantages2 = styled(Box)(({ theme }) => ({
-  backgroundImage: "url('assets/bg8.png')",
-  backgroundPosition: "center",
-  backgroundRepeat: "no-repeat",
-  backgroundSize: "100% 100%",
-  minHeight: "172px",
-  marginLeft: "32px",
-  width: "100%"
-}));
-
-const Avantages3 = styled(Box)(({ theme }) => ({
-  backgroundImage: "url('assets/bg9.png')",
-  backgroundPosition: "center",
-  backgroundRepeat: "no-repeat",
-  backgroundSize: "100% 100%",
-  minHeight: "172px",
-  width: "110%",
-  margin: "auto"
-}));
-
-const Avantages4 = styled(Box)(({ theme }) => ({
-  backgroundImage: "url('assets/bg10.png')",
-  backgroundPosition: "center",
-  backgroundRepeat: "no-repeat",
-  backgroundSize: "100% 100%",
-  minHeight: "172px",
-  margin: "auto",
-  marginLeft: "32px",
-  width: "100%"
-}));
-
-const Avantages1_2 = styled(Box)(({ theme }) => ({
-  minHeight: "100px",
-  width: "100%",
-  backgroundSize: "100% 100%",
-  backgroundImage: "url('assets/bg3.png')",
-  backgroundPosition: "center",
-  backgroundRepeat: "no-repeat",
-  margin: "auto",
-  marginTop: "176px",  
-  position: "relative"
-}));
-
-const Avantages2_2 = styled(Box)(({ theme }) => ({
-    minHeight: "100px",
-    width: "100%",
-    backgroundSize: "100% 100%",
-    backgroundImage: "url('assets/bg4.png')",
-    backgroundPosition: "center",
-    backgroundRepeat: "no-repeat",
-    margin: "auto",
-    marginTop: "176px",  
-    position: "relative"
-}));
-
-const Avantages3_2 = styled(Box)(({ theme }) => ({
-  minHeight: "100px",
-  width: "100%",
-  backgroundSize: "100% 100%",
-  backgroundImage: "url('assets/bg5.png')",
-  backgroundPosition: "center",
-  backgroundRepeat: "no-repeat",
-  margin: "auto",
-  marginTop: "176px",  
-  position: "relative"
-}));
-
-const Avantages4_2 = styled(Box)(({ theme }) => ({
-  minHeight: "100px",
-  width: "100%",
-  backgroundSize: "100% 100%",
-  backgroundImage: "url('assets/bg6.png')",
-  backgroundPosition: "center",
-  backgroundRepeat: "no-repeat",
-  margin: "auto",
-  marginTop: "176px",  
-  position: "relative"
-}));
-
-const AvantagesImg = styled(Box)(({ theme }) => ({
-  height: "100%",
-  minWidth: "150px",
-  position: "absolute",
-}));
-
-const AvantagesImg_2 = styled(Box)(({ theme }) => ({
-  display: "block",
-  marginLeft: "auto",
-  marginRight: "auto",
-  width: "70%",
-  align: "center",
-}));
-
-const AvantagesImgBox_2 = styled(Box)(({ theme }) => ({
-  width: "100%",
-  position: "absolute",
-  top: "-128px",
-}));
-
 const Img3 = styled(Box)(({ theme }) => ({
   display: "block",
   marginLeft: "auto",
@@ -307,60 +152,13 @@ const Sun2 = styled(Box)(({ theme }) => ({
   marginTop: "-120px",
 }));
 
-const Footer = styled(Box)(({ theme }) => ({
-  width: "100%",
-  height: "256px",
-  backgroundColor: "#282828"
-}));
-
-const AvantagesHeader_2 = styled(Box)(({ theme }) => ({
-  marginTop: "16px",
-  color: "#FFF",
-  [theme.breakpoints.down("sm")]: {
-    width: "80%",
-  }
-}));
-
 const Home = () => {
   return (
       <>
       <CssBaseline />
-        <appbar position="relative" elevation={0} height="200px">
-        <Toolbar position="relative">
-          <Box sx={{ flexGrow: 1 }}>
-            <LeVesuvio>
-              le Vesuvio
-            </LeVesuvio>
-            <NftBox>
-              <img width="100%" height="100%" src="assets/nft.png" alt=""/>
-            </NftBox>
-          </Box>
-          <Box color="black">
-            <Hamburger>
-              <Menu />
-            </Hamburger>
-          </Box>
-        </Toolbar>
-      </appbar>
-
+      <Navbar />
       <main>
-        {/* Header Desktop*/}
-        <Header sx={{ display: { xs: 'none', sm: 'block' } }}>
-          <Grid paddingTop={32} paddingBottom={32} height="100%" container spacing={0} direction="column" alignItems="center" justifyContent="center">
-            <Grid item>
-              <But2 variant="contained">
-                <Typography fontWeight="700">
-                  CONNEXION
-                </Typography>
-              </But2> 
-            </Grid>
-            <Grid item>
-              <Text1 fontWeight="500" variant="h6">
-                Vous pouvez vous connecter via votre Wallet ou par Email.
-              </Text1>
-            </Grid>
-          </Grid>
-        </Header>
+      <Header />
 
       <FloatingLogo>
         <img height="100%" width="100%" src="assets/logo2.png" alt=""/>
@@ -447,162 +245,8 @@ const Home = () => {
             AVANTAGES
           </Typography>
         </Section5>
-       
-        {/*Section 6 Desktop*/}
-        <Box container alignItems="center" sx={{ display: { xs: 'none', sm: 'block' } }} align="center">
-          <Grid container marginTop={4} direction="row" color="#A09369">
-            <Grid item xs={7} margin="auto">
-              <Grid container position="relative" direction="row" color="#A09369">
-                <Grid item xs={9}>
-                  <Avantages1>
-                    <Grid container direction="column" alignItems="center" justifyContent="center" color="#A09369">
-                      <Grid item marginTop={4}>
-                        <Typography variant="h4" color="#FFF" fontFamily="ITC Berkeley Oldstyle Std" fontWeight="500">
-                          Fast Pass
-                        </Typography>
-                      </Grid>
-                      <Grid item marginTop={4} marginBottom={4}>
-                        <Typography color="#FFF" fontWeight="700" width="80%" align="center" margin="auto" fontSize="20px">
-                          Seuls les membres de cette communauté auront la possibilité de réserver dans nos établissements.
-                        </Typography>
-                      </Grid>
-                    </Grid>
-                  </Avantages1>
-                </Grid>
-                <Grid item xs={3}>
-                  <AvantagesImg>
-                    <img width="100%" height="100%" src="assets/avantages1.png" alt=""/>  
-                  </AvantagesImg>
-                </Grid>
-              </Grid>
-            </Grid>   
-            <Grid item xs={2} margin="auto">
-              <But3 variant="contained">
-                <Typography fontWeight="700" variant="h6">
-                  DETAILS
-                </Typography>
-              </But3> 
-            </Grid>   
-          </Grid>
-        </Box>
 
-        {/*Section 7 Desktop*/}
-        <Box elevation="20"  sx={{ display: { xs: 'none', sm: 'block' } }} align="center">
-          <Grid container marginTop={4} direction="row" color="#A09369">
-            <Grid item xs={3} margin="auto">
-              <But3 variant="contained">
-                <Typography fontWeight="700" variant="h6">
-                  DETAILS
-                </Typography>
-              </But3> 
-            </Grid>   
-            <Grid item xs={7}>
-              <Grid container position="relative" direction="row" color="#A09369">
-                <Grid item xs={8}>
-                  <Avantages2>
-                    <Grid container direction="column" alignItems="center" justifyContent="center" color="#A09369">
-                      <Grid item marginTop={4}>
-                        <Typography variant="h4" color="#FFF" fontFamily="ITC Berkeley Oldstyle Std" fontWeight="500">
-                          Mangiare Gratis
-                        </Typography>
-                      </Grid>
-                      <Grid item marginTop={4} marginBottom={4}>
-                        <Typography color="#FFF" fontWeight="700" width="80%" align="center" margin="auto" fontSize="20px">
-                          Vous pourrez profiter à vie d’un plat par jour offert par la maison.
-                        </Typography>
-                      </Grid>
-                    </Grid>
-                  </Avantages2>
-                </Grid>
-                <Grid item xs={0}>
-                  <AvantagesImg>
-                    <img width="100%" height="100%" src="assets/avantages2.png" alt=""/>  
-                  </AvantagesImg>
-                </Grid>
-              </Grid>
-            </Grid>   
-            <Grid item xs={1}>
-            </Grid>
-          </Grid>
-        </Box>
-
-        {/*Section 8 Desktop*/}
-        <Box elevation="20"  sx={{ display: { xs: 'none', sm: 'block' } }} align="center">
-          <Grid container marginTop={4} direction="row" color="#A09369">
-            <Grid item xs={7} margin="auto">
-              <Grid container position="relative" direction="row" color="#A09369">
-                <Grid item xs={9}>
-                  <Avantages3>
-                    <Grid container direction="column" alignItems="center" justifyContent="center" color="#A09369">
-                      <Grid item marginTop={4}>
-                        <Typography variant="h4" color="#FFF" fontFamily="ITC Berkeley Oldstyle Std" fontWeight="500">
-                          Events Privés
-                        </Typography>
-                      </Grid>
-                      <Grid item marginTop={4} marginBottom={4}>
-                        <Typography color="#FFF" fontWeight="700" width="80%" align="center" margin="auto" fontSize="20px">
-                          Un accès privilégié aux événements privés organisés par Le Vesuvio.
-                        </Typography>
-                      </Grid>
-                    </Grid>
-                  </Avantages3>
-                </Grid>
-                <Grid item xs={0}>
-                  <AvantagesImg>
-                    <img width="100%" height="100%" src="assets/avantages3.png" alt=""/>  
-                  </AvantagesImg>
-                </Grid>
-              </Grid>
-            </Grid>   
-            <Grid item xs={2} margin="auto">
-              <But3 variant="contained">
-                <Typography fontWeight="700" variant="h6">
-                  DETAILS
-                </Typography>
-              </But3> 
-            </Grid>   
-          </Grid>
-        </Box>
-
-        {/*Section 9 Desktop*/}
-        <Box elevation="20"  sx={{ display: { xs: 'none', sm: 'block' } }} align="center">
-          <Grid container marginTop={4} direction="row" color="#A09369">
-            <Grid item xs={3} margin="auto">
-              <But3 variant="contained">
-                <Typography fontWeight="700" variant="h6">
-                  DETAILS
-                </Typography>
-              </But3> 
-            </Grid>   
-            <Grid item xs={7}>
-              <Grid container position="relative" direction="row" color="#A09369">
-                <Grid item xs={8}>
-                  <Avantages4>
-                    <Grid container direction="column" alignItems="center" justifyContent="center" color="#A09369">
-                      <Grid item marginTop={4}>
-                        <Typography variant="h4" color="#FFF" fontFamily="ITC Berkeley Oldstyle Std" fontWeight="500">
-                          Inviations
-                        </Typography>
-                      </Grid>
-                      <Grid item marginTop={4} marginBottom={4}>
-                        <Typography color="#FFF" fontWeight="700" width="80%" align="center" margin="auto" fontSize="20px">
-                          Inviter des amis à se joindre à eux pour des dîners dans des salles privées, ou pour des soirées sur la terrasse avec vue sur la mer. 
-                        </Typography>
-                      </Grid>
-                    </Grid>
-                  </Avantages4>
-                </Grid>
-                <Grid item xs={0}>
-                  <AvantagesImg>
-                    <img width="100%" height="100%" src="assets/avantages4.png" alt=""/>  
-                  </AvantagesImg>
-                </Grid>
-              </Grid>
-            </Grid>   
-            <Grid item xs={1}>
-            </Grid>
-          </Grid>
-        </Box>
+        <Avantages />
 
         {/* Header Mobile*/}
         <Header_2 sx={{ display: { xs: 'block', sm: 'none' } }}>
@@ -712,117 +356,7 @@ const Home = () => {
           </Typography>
         </Section5>
 
-        {/* Section 6 Mobile */}
-        <Avantages1_2 sx={{ display: { xs: 'block', sm: 'none' } }}>
-          <AvantagesImgBox_2>
-            <AvantagesImg_2>
-              <img width="100%" height="100%" src="assets/avantages1.png" alt=""/>  
-            </AvantagesImg_2>
-          </AvantagesImgBox_2>
-          <Grid container direction="column" alignItems="center" justifyContent="center" color="#A09369">
-            <Grid item marginTop={48}>
-              <Typography variant="h2" color="#FFF" fontFamily="ITC Berkeley Oldstyle Std" fontWeight="700">
-                Fast Pass
-              </Typography>
-            </Grid>         
-            <Grid item marginTop={16}>
-              <Typography color="#FFF" fontWeight="700" width="80%" align="center" margin="auto" fontSize="24px">
-                Seuls les membres de cette communauté auront la possibilité de réserver dans nos établissements.
-              </Typography>
-            </Grid>         
-            <Grid item marginTop={16} marginBottom={16}>
-              <But2 variant="contained">
-                <Typography fontWeight="700" variant="h6" fontSize="24px">
-                  PLUS DE DETAILS
-                </Typography>
-              </But2> 
-            </Grid>
-          </Grid>
-        </Avantages1_2>
-
-        {/* Section 7 Mobile */}
-        <Avantages2_2 sx={{ display: { xs: 'block', sm: 'none' } }}>
-          <AvantagesImgBox_2>
-            <AvantagesImg_2>
-              <img width="100%" height="100%" src="assets/avantages2.png" alt=""/>  
-            </AvantagesImg_2>
-          </AvantagesImgBox_2>
-          <Grid container direction="column" alignItems="center" justifyContent="center" color="#A09369">
-            <Grid item marginTop={48}>
-              <Typography variant="h2" color="#FFF" fontFamily="ITC Berkeley Oldstyle Std" fontWeight="700">
-                Mangiare Gratis
-              </Typography>
-            </Grid>         
-            <Grid item marginTop={16}>
-              <Typography color="#FFF" fontWeight="700" width="80%" align="center" margin="auto" fontSize="24px">
-                Vous pourrez profiter à vie d’un plat par jour offert par la maison.
-              </Typography>
-            </Grid>         
-            <Grid item marginTop={16} marginBottom={16}>
-              <But2 variant="contained">
-                <Typography fontWeight="700" variant="h6" fontSize="24px">
-                  PLUS DE DETAILS
-                </Typography>
-              </But2> 
-            </Grid>
-          </Grid>
-        </Avantages2_2>
-
-        {/* Section 8 Mobile */}
-        <Avantages3_2 sx={{ display: { xs: 'block', sm: 'none' } }}>
-          <AvantagesImgBox_2>
-            <AvantagesImg_2>
-              <img width="100%" height="100%" src="assets/avantages3.png" alt=""/>  
-            </AvantagesImg_2>
-          </AvantagesImgBox_2>
-          <Grid container direction="column" alignItems="center" justifyContent="center" color="#A09369">
-            <Grid item marginTop={48}>
-              <Typography variant="h2" color="#FFF" fontFamily="ITC Berkeley Oldstyle Std" fontWeight="700">
-                Events Privés
-              </Typography>
-            </Grid>         
-            <Grid item marginTop={16}>
-              <Typography color="#FFF" fontWeight="700" width="80%" align="center" margin="auto" fontSize="24px">
-                Un accès privilégié aux événements privés organisés par Le Vesuvio.
-              </Typography>
-            </Grid>         
-            <Grid item marginTop={16} marginBottom={16}>
-              <But2 variant="contained">
-                <Typography fontWeight="700" variant="h6" fontSize="24px">
-                  PLUS DE DETAILS
-                </Typography>
-              </But2> 
-            </Grid>
-          </Grid>
-        </Avantages3_2>
-
-        {/* Section 9 Mobile */}
-        <Avantages4_2 sx={{ display: { xs: 'block', sm: 'none' } }}>
-          <AvantagesImgBox_2>
-            <AvantagesImg_2>
-              <img width="100%" height="100%" src="assets/avantages4.png" alt=""/>  
-            </AvantagesImg_2>
-          </AvantagesImgBox_2>
-          <Grid container direction="column" alignItems="center" justifyContent="center" color="#A09369">
-            <Grid item marginTop={48}>
-              <Typography variant="h2" color="#FFF" fontFamily="ITC Berkeley Oldstyle Std" fontWeight="700">
-                Inviations
-              </Typography>
-            </Grid>         
-            <Grid item marginTop={16}>
-              <Typography color="#FFF" fontWeight="700" width="80%" align="center" margin="auto" fontSize="24px">
-                Inviter des amis à se joindre à eux pour des dîners dans des salles privées, ou pour des soirées sur la terrasse avec vue sur la mer. 
-              </Typography>
-            </Grid>         
-            <Grid item marginTop={16} marginBottom={16}>
-              <But2 variant="contained">
-                <Typography fontWeight="700" variant="h6" fontSize="24px">
-                  PLUS DE DETAILS
-                </Typography>
-              </But2> 
-            </Grid>
-          </Grid>
-        </Avantages4_2>
+        <AvantagesMobile />
 
         {/* Section 10 Desktop and Mobile */}
         <Box>
@@ -854,43 +388,7 @@ const Home = () => {
             </Grid>
           </Grid>
         </Box>
-
-        {/* Footer Desktop */}
-        <Footer>
-          <Grid container direction="row" alignItems="center" justifyContent="center">
-            <Grid item marginTop={4} xs={8} marginLeft={1} order={{ sm: 1, xs: 2}}>
-              <Typography color="#FFF" fontWeight="500" fontSize="large">
-                LE VESUVIO
-              </Typography>
-              <Typography marginTop={4} color="#FFF" fontWeight="500" fontSize="large">
-                MENTIONS LEGALES
-              </Typography>
-              <Typography marginTop={4} color="#FFF" fontWeight="500" fontSize="large">
-                A PROPOS
-              </Typography>
-            </Grid>
-            <Grid item xs={4} sm={3} md={2} container justifyContent="space-between" spacing={0} marginTop={{ sm: 0, xs: 4 }} order={{ sm: 2, xs: 1}}>
-              <img width="36px" height="36px" src="assets/dc.png" alt=""/>
-              <img width="36px" height="36px" src="assets/twitter.png" alt=""/>
-              <img width="32px" height="32px" src="assets/ship.png" alt=""/>
-              <img width="32px" height="32px" src="assets/ig.png" alt=""/>
-            </Grid>
-          </Grid>
-          <Grid container direction="row" alignItems="center" justifyContent="center" backgroundColor="#282828">
-            <Grid item marginBottom={4}>
-              <Box align="center" marginTop={4} width="100%">
-                <Typography fontFamily="ITC Berkeley Oldstyle Std" fontWeight="700" variant="h4" color="#FFF">
-                  le Vesuvio X
-                </Typography>
-              </Box>
-            </Grid>
-            <Grid item marginTop={3} marginBottom={4}>
-              <Box>
-                <img height="50px" src="assets/akashic.png" alt=""/>
-              </Box>
-            </Grid>
-          </Grid>
-        </Footer>
+        <Footer />
       </main>
     </>
   );

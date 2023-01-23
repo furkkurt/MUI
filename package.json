@@ -19,6 +19,7 @@
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
     "futura-font": "^1.0.0",
+    "hamburger-react": "^2.5.0",
     "next": "13.1.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
