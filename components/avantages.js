@@ -45,7 +45,7 @@ const Avantages4 = styled(Box)(({ theme }) => ({
 
 const AvantagesImg = styled(Box)(({ theme }) => ({
   height: "100%",
-  minWidth: "150px",
+  minWidth: "100px",
   position: "absolute",
 }));
 
@@ -79,7 +79,7 @@ function Avantages() {
             </Grid>
             <Grid item xs={3}>
               <AvantagesImg>
-                <img width="100%" height="100%" src="assets/avantages1.png" alt=""/>  
+                <img height="100%" width="auto" src="assets/avantages1.png" alt=""/>  
               </AvantagesImg>
             </Grid>
           </Grid>
@@ -123,7 +123,7 @@ function Avantages() {
             </Grid>
             <Grid item xs={0}>
               <AvantagesImg>
-                <img width="100%" height="100%" src="assets/avantages2.png" alt=""/>  
+                <img width="auto" height="100%" src="assets/avantages2.png" alt=""/>  
               </AvantagesImg>
             </Grid>
           </Grid>
@@ -155,7 +155,7 @@ function Avantages() {
             </Grid>
             <Grid item xs={0}>
               <AvantagesImg>
-                <img width="100%" height="100%" src="assets/avantages3.png" alt=""/>  
+                <img width="auto" height="100%" src="assets/avantages3.png" alt=""/>  
               </AvantagesImg>
             </Grid>
           </Grid>
@@ -199,7 +199,7 @@ function Avantages() {
             </Grid>
             <Grid item xs={0}>
               <AvantagesImg>
-                <img width="100%" height="100%" src="assets/avantages4.png" alt=""/>  
+                <img width="auto" height="100%" src="assets/avantages4.png" alt=""/>  
               </AvantagesImg>
             </Grid>
           </Grid>

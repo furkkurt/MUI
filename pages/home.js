@@ -149,7 +149,13 @@ const Sun2 = styled(Box)(({ theme }) => ({
   marginleft: "auto",
   marginright: "auto",
   width: "100%",
-  marginTop: "-120px",
+  marginTop: "-160px",
+  [theme.breakpoints.down("lg")]: {
+    marginTop: "-120px"
+  },
+  [theme.breakpoints.down("md")]: {
+    marginTop: "-80px"
+  },
 }));
 
 const Home = () => {
@@ -158,14 +164,14 @@ const Home = () => {
       <CssBaseline />
       <Navbar />
       <main>
-      <Header />
-
-      <FloatingLogo>
-        <img height="100%" width="100%" src="assets/logo2.png" alt=""/>
-      </FloatingLogo>
+        <FloatingLogo>
+          <img height="100%" width="100%" src="assets/logo2.png" alt=""/>
+        </FloatingLogo>
+ 
+        <Header />
 
         {/*Section 1 Desktop*/}
-        <Section1 sx={{ display: { xs: 'none', sm: 'block' } }} position="relative">
+        <Section1 sx={{ display: { xs: 'none', sm: 'block' } }} position="relative" marginTop={4}>
           <Image2>
             <Grid container direction="column" alignItems="center" justifyContent="center" color="#A09369">
               <Grid item marginTop={4}>
@@ -200,7 +206,7 @@ const Home = () => {
         </Section1>
         
         {/*Section 2 Desktop*/}
-        <Box zIndex="9998" sx={{ display: { xs: 'none', sm: 'block' } }}>
+        <Box position="relative" zIndex="9999" sx={{ display: { xs: 'none', sm: 'block' } }}>
           <Sun2>
             <img height="100%" width="100%" src="assets/sun2.png" alt=""/>
           </Sun2>
