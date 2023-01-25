@@ -52,8 +52,9 @@ const AvantagesImg = styled(Box)(({ theme }) => ({
 const But3 = styled(Button)(({ theme }) => ({
   color: "#A09369",
   width: "100%",
-  height: "60px"
+  height: "60px",
 }));
+
 function Avantages() {
   return(
     <>
@@ -88,7 +89,7 @@ function Avantages() {
         </Grid>
         <Grid item md={2} sm={2} margin="auto">
           <But3 variant="contained">
-            <Typography fontWeight="700" variant="h6">
+            <Typography fontWeight="700" fontSize="20px">
               DETAILS
             </Typography>
           </But3> 
@@ -100,7 +101,7 @@ function Avantages() {
       <Grid container marginTop={4} direction="row" color="#A09369">
         <Grid item xs={3} margin="auto">
           <But3 variant="contained">
-            <Typography fontWeight="700" variant="h6">
+            <Typography fontWeight="700" fontSize="20px">
               DETAILS
             </Typography>
           </But3> 
@@ -135,11 +136,11 @@ function Avantages() {
       </Grid>
     </Box>
 
-    <Box elevation="20"  sx={{ display: { xs: 'none', sm: 'block' } }} align="center">
+    <Box container alignItems="center" sx={{ display: { xs: 'none', sm: 'block' } }} align="center">
       <Grid container marginTop={4} direction="row" color="#A09369">
-        <Grid item xs={7} margin="auto">
+        <Grid item md={7} sm={7} margin="auto">
           <Grid container position="relative" direction="row" color="#A09369">
-            <Grid item xs={9}>
+            <Grid item md={9} sm={8}>
               <Avantages3>
                 <Grid container direction="column" alignItems="center" justifyContent="center" color="#A09369">
                   <Grid item marginTop={4}>
@@ -157,16 +158,16 @@ function Avantages() {
             </Grid>
             <Grid item xs={0}>
               <AvantagesImg>
-                <img width="auto" height="100%" src="assets/avantages3.png" alt=""/>  
+                <img height="100%" width="auto" src="assets/avantages3.png" alt=""/>  
               </AvantagesImg>
             </Grid>
           </Grid>
         </Grid>   
         <Grid item sm={3}sx={{ display: { sm: 'block', md: 'none' } }}>
         </Grid>
-        <Grid item xs={2} margin="auto">
+        <Grid item md={2} sm={2} margin="auto">
           <But3 variant="contained">
-            <Typography fontWeight="700" variant="h6">
+            <Typography fontWeight="700" fontSize="20px">
               DETAILS
             </Typography>
           </But3> 
@@ -174,11 +175,11 @@ function Avantages() {
       </Grid>
     </Box>
 
-    <Box elevation="20"  sx={{ display: { xs: 'none', sm: 'block' } }} align="center">
+    <Box container sx={{ display: { xs: 'none', sm: 'block' } }} align="center">
       <Grid container marginTop={4} direction="row" color="#A09369">
         <Grid item xs={3} margin="auto">
           <But3 variant="contained">
-            <Typography fontWeight="700" variant="h6">
+            <Typography fontWeight="700" fontSize="20px">
               DETAILS
             </Typography>
           </But3> 
