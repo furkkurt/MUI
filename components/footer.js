@@ -25,7 +25,7 @@ function Footer() {
             A PROPOS
           </Typography>
         </Grid>
-        <Grid item xs={4} sm={3} md={2} container justifyContent="space-between" spacing={0} marginTop={{ sm: 0, xs: 4 }} order={{ sm: 2, xs: 1}}>
+        <Grid item xs={8} sm={3} md={2} container justifyContent="space-between" spacing={0} marginTop={{ sm: 0, xs: 4 }} order={{ sm: 2, xs: 1}}>
           <img width="36px" height="36px" src="assets/dc.png" alt=""/>
           <img width="36px" height="36px" src="assets/twitter.png" alt=""/>
           <img width="32px" height="32px" src="assets/ship.png" alt=""/>
