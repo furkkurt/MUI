@@ -8,6 +8,7 @@ const Avantages1 = styled(Box)(({ theme }) => ({
   backgroundRepeat: "no-repeat",
   backgroundSize: "100% 100%",
   minHeight: "172px",
+  height: document.getElementById("largestAvantage").offsetHeight,
   width: "110%",
   margin: "auto"
 }));
@@ -19,6 +20,7 @@ const Avantages2 = styled(Box)(({ theme }) => ({
   backgroundSize: "100% 100%",
   minHeight: "172px",
   marginLeft: "32px",
+  height: document.getElementById("largestAvantage").offsetHeight,
   width: "100%"
 }));
 
@@ -29,6 +31,7 @@ const Avantages3 = styled(Box)(({ theme }) => ({
   backgroundSize: "100% 100%",
   minHeight: "172px",
   width: "110%",
+  height: document.getElementById("largestAvantage").offsetHeight,
   margin: "auto"
 }));
 
@@ -37,7 +40,6 @@ const Avantages4 = styled(Box)(({ theme }) => ({
   backgroundPosition: "center",
   backgroundRepeat: "no-repeat",
   backgroundSize: "100% 100%",
-  minHeight: "172px",
   margin: "auto",
   marginLeft: "32px",
   width: "100%"
@@ -63,7 +65,7 @@ function Avantages() {
         <Grid item md={7} sm={7} margin="auto">
           <Grid container position="relative" direction="row" color="#A09369">
             <Grid item md={9} sm={8}>
-              <Avantages1>
+              <Avantages1 id="avantage1">
                 <Grid container direction="column" alignItems="center" justifyContent="center" color="#A09369">
                   <Grid item marginTop={4}>
                     <Typography variant="h4" color="#FFF" fontFamily="ITC Berkeley Oldstyle Std" fontWeight="500">
@@ -109,7 +111,7 @@ function Avantages() {
         <Grid item xs={7}>
           <Grid container position="relative" direction="row" color="#A09369">
             <Grid item xs={8}>
-              <Avantages2>
+              <Avantages2 id="avantage2">
                 <Grid container direction="column" alignItems="center" justifyContent="center" color="#A09369">
                   <Grid item marginTop={4}>
                     <Typography variant="h4" color="#FFF" fontFamily="ITC Berkeley Oldstyle Std" fontWeight="500">
@@ -141,7 +143,7 @@ function Avantages() {
         <Grid item md={7} sm={7} margin="auto">
           <Grid container position="relative" direction="row" color="#A09369">
             <Grid item md={9} sm={8}>
-              <Avantages3>
+              <Avantages3 id="avantage3">
                 <Grid container direction="column" alignItems="center" justifyContent="center" color="#A09369">
                   <Grid item marginTop={4}>
                     <Typography variant="h4" color="#FFF" fontFamily="ITC Berkeley Oldstyle Std" fontWeight="500">
@@ -187,7 +189,7 @@ function Avantages() {
         <Grid item xs={7}>
           <Grid container position="relative" direction="row" color="#A09369">
             <Grid item xs={8}>
-              <Avantages4>
+              <Avantages4 id="largestAvantage">
                 <Grid container direction="column" alignItems="center" justifyContent="center" color="#A09369">
                   <Grid item marginTop={4}>
                     <Typography variant="h4" color="#FFF" fontFamily="ITC Berkeley Oldstyle Std" fontWeight="500">
