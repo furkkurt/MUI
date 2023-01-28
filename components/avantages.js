@@ -1,14 +1,20 @@
-import React from "react";
+import {React, useEffect } from "react";
 import { styled, Typography, AppBar, Box, Button, Card, CardActions, CardContent, CardMedia, CssBaseline, Grid, Toolbar, Container } from "@mui/material";
 import { Menu } from "@mui/icons-material";
-
+if (typeof window !== "undefined") {
+  window.addEventListener('resize', function(event) {
+    var offsetHeight = document.getElementById("largestAvantage").offsetHeight;
+    document.getElementById("avantage1").style.height = offsetHeight+'px';
+    document.getElementById("avantage2").style.height = offsetHeight+'px';
+    document.getElementById("avantage3").style.height = offsetHeight+'px';
+  }, true);
+}
 const Avantages1 = styled(Box)(({ theme }) => ({
   backgroundImage: "url('assets/bg7.png')",
   backgroundPosition: "center",
   backgroundRepeat: "no-repeat",
   backgroundSize: "100% 100%",
   minHeight: "172px",
-  height: document.getElementById("largestAvantage").offsetHeight,
   width: "110%",
   margin: "auto"
 }));
@@ -20,7 +26,6 @@ const Avantages2 = styled(Box)(({ theme }) => ({
   backgroundSize: "100% 100%",
   minHeight: "172px",
   marginLeft: "32px",
-  height: document.getElementById("largestAvantage").offsetHeight,
   width: "100%"
 }));
 
@@ -31,7 +36,6 @@ const Avantages3 = styled(Box)(({ theme }) => ({
   backgroundSize: "100% 100%",
   minHeight: "172px",
   width: "110%",
-  height: document.getElementById("largestAvantage").offsetHeight,
   margin: "auto"
 }));
 

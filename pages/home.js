@@ -7,6 +7,7 @@ import AvantagesMobile from "../components/avantagesMobile.js";
 import Header from "../components/header.js";
 import Footer from "../components/footer.js";
 
+
 const FloatingLogo = styled(Box)(({ theme }) => ({
   position: "absolute",
   top: "100px",
